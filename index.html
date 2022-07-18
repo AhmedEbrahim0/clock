@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>clock</title>
+        <link rel="stylesheet" href="main.css">
+
+    </head>
+    <body>
+        <div class="clock">
+            <div class="hand hour" id="hour" data-hour=""></div>
+            <div class="hand minute" id="min"></div>
+            <div class="hand secoud" id="sec"></div>
+            <div class="number number1">1</div>
+            <div class="number number2">2</div>
+            <div class="number number3">3</div>
+            <div class="number number4">4</div>
+            <div class="number number5">5</div>
+            <div class="number number6">6</div>
+            <div class="number number7">7</div>
+            <div class="number number8">8</div>
+            <div class="number number9">9</div>
+            <div class="number number10">10</div>
+            <div class="number number11">11</div>
+            <div class="number number12">12</div>
+
+        </div>
+
+        <script>
+            var sec=0,min=0,hour=0 , rotationOfSec=0,rotationOfHour=0;
+            var elHour=document.querySelector("#hour")
+            var elMin=document.querySelector("#min")
+            var elSec=document.querySelector("#sec")
+
+
+            function secFunction(){
+                let currentDate=new Date()
+                var sec=currentDate.getSeconds();
+                var min=currentDate.getMinutes();
+                var hour=currentDate.getHours();
+                
+                
+                rotationOfSec =sec*6;
+                elSec.style.transform="rotate(" + rotationOfSec +  "deg)"
+                
+                elMin.style.transform="rotate(" + min*6 +  "deg)"
+                
+                rotationOfHour=hour-12;
+                elHour.style.transform="rotate(" + rotationOfHour*30 +  "deg)"
+            }
+
+
+
+            setInterval(secFunction,1000)
+        </script>
+
+    </body>
+</html>
