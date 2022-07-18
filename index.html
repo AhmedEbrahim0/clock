@@ -43,9 +43,8 @@
                 
                 elMin.style.transform="rotate(" + min*6 +  "deg)"
                 
-                rotationOfHour=((hour-12)*30)+ (min/30) +5 ;
-                console.log((rotationOfHour) )
-                elHour.style.transform="rotate(" + rotationOfHour   +  "deg)"
+                rotationOfHour=hour-12;
+                elHour.style.transform="rotate(" + rotationOfHour*30 +  "deg)"
             }
 
 
